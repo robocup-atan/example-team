@@ -8,12 +8,14 @@ import org.apache.log4j.BasicConfigurator;
 
 /**
  * A main class to start a simply silly team.
+ *
  * @author Atan
  */
 public class Simple1Run {
 
     /**
      * Start up team Simple1
+     *
      * @param args No args
      */
     public static void main(String[] args) {

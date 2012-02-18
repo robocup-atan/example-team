@@ -30,6 +30,8 @@ import java.util.Random;
  * but can see the ball it turns to the ball and dashes. If it sees anything but
  * not the ball or the own goals it dashes a little bit and turns a fixed amount
  * of degree to the right.
+ *
+ * @author Atan
  */
 public class Simple implements ControllerPlayer {
     private static int    count         = 0;
@@ -52,25 +54,19 @@ public class Simple implements ControllerPlayer {
         count++;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public ActionsPlayer getPlayer() {
         return player;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void setPlayer(ActionsPlayer p) {
         player = p;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void preInfo() {
         canSeeOwnGoal = false;
@@ -78,9 +74,7 @@ public class Simple implements ControllerPlayer {
         canSeeNothing = true;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void postInfo() {
         if (canSeeNothing) {
@@ -100,90 +94,70 @@ public class Simple implements ControllerPlayer {
         }
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeFlagRight(Flag flag, double distance, double direction, double distChange, double dirChange,
                                  double bodyFacingDirection, double headFacingDirection) {
         canSeeNothing = false;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeFlagLeft(Flag flag, double distance, double direction, double distChange, double dirChange,
                                 double bodyFacingDirection, double headFacingDirection) {
         canSeeNothing = false;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeFlagOwn(Flag flag, double distance, double direction, double distChange, double dirChange,
                                double bodyFacingDirection, double headFacingDirection) {
         canSeeNothing = false;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeFlagOther(Flag flag, double distance, double direction, double distChange, double dirChange,
                                  double bodyFacingDirection, double headFacingDirection) {
         canSeeNothing = false;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeFlagCenter(Flag flag, double distance, double direction, double distChange, double dirChange,
                                   double bodyFacingDirection, double headFacingDirection) {
         canSeeNothing = false;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeFlagCornerOwn(Flag flag, double distance, double direction, double distChange, double dirChange,
                                      double bodyFacingDirection, double headFacingDirection) {
         canSeeNothing = false;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeFlagCornerOther(Flag flag, double distance, double direction, double distChange,
                                        double dirChange, double bodyFacingDirection, double headFacingDirection) {
         canSeeNothing = false;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeFlagPenaltyOwn(Flag flag, double distance, double direction, double distChange,
                                       double dirChange, double bodyFacingDirection, double headFacingDirection) {
         canSeeNothing = false;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeFlagPenaltyOther(Flag flag, double distance, double direction, double distChange,
             double dirChange, double bodyFacingDirection, double headFacingDirection) {
         canSeeNothing = false;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeFlagGoalOwn(Flag flag, double distance, double direction, double distChange, double dirChange,
                                    double bodyFacingDirection, double headFacingDirection) {
@@ -195,41 +169,31 @@ public class Simple implements ControllerPlayer {
         }
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeFlagGoalOther(Flag flag, double distance, double direction, double distChange, double dirChange,
                                      double bodyFacingDirection, double headFacingDirection) {
         canSeeNothing = false;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeLine(Line line, double distance, double direction, double distChange, double dirChange,
                             double bodyFacingDirection, double headFacingDirection) {
         canSeeNothing = false;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeePlayerOther(int number, boolean goalie, double distance, double direction, double distChange,
                                    double dirChange, double bodyFacingDirection, double headFacingDirection) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeePlayerOwn(int number, boolean goalie, double distance, double direction, double distChange,
                                  double dirChange, double bodyFacingDirection, double headFacingDirection) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeBall(double distance, double direction, double distChange, double dirChange,
                             double bodyFacingDirection, double headFacingDirection) {
@@ -239,15 +203,11 @@ public class Simple implements ControllerPlayer {
         this.directionBall = direction;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearReferee(RefereeMessage refereeMessage) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearPlayMode(PlayMode playMode) {
         if (playMode == PlayMode.BEFORE_KICK_OFF) {
@@ -292,56 +252,40 @@ public class Simple implements ControllerPlayer {
         }
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearPlayer(double direction, String message) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSenseBody(ViewQuality viewQuality, ViewAngle viewAngle, double stamina, double unknown,
                               double effort, double speedAmount, double speedDirection, double headAngle,
                               int kickCount, int dashCount, int turnCount, int sayCount, int turnNeckCount,
                               int catchCount, int moveCount, int changeViewCount) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public String getType() {
         return "Simple";
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void setType(String newType) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearError(Errors error) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearOk(Ok ok) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearWarning(Warning warning) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoPlayerParam(double allowMultDefaultType, double dashPowerRateDeltaMax,
                                 double dashPowerRateDeltaMin, double effortMaxDeltaFactor, double effortMinDeltaFactor,
@@ -353,29 +297,21 @@ public class Simple implements ControllerPlayer {
                                 double playerDecayDeltaMin, double playerTypes, double ptMax, double randomSeed,
                                 double staminaIncMaxDeltaFactor, double subsMax) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoPlayerType(int id, double playerSpeedMax, double staminaIncMax, double playerDecay,
                                double inertiaMoment, double dashPowerRate, double playerSize, double kickableMargin,
                                double kickRand, double extraStamina, double effortMax, double effortMin) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoCPTOther(int unum) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoCPTOwn(int unum, int type) {}
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoServerParam(HashMap<ServerParams, Object> info) {}
 
