@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+  
+    <groupId>com.github.robocup_atan.example_team</groupId>
+    <artifactId>example-team</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    
+    <name>Example Team</name>
+    <description>An example team using the atan interface.</description>
+    <url>http://robocup-atan.github.com/example-team/</url>
+    
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <comments>All source code is under the MIT license.</comments>
+        </license>
+    </licenses>
+    
+    <developers>
+        <developer>
+            <id>verbitan</id>
+            <name>Nick James</name>
+            <email>verbitan@gmail.com</email>
+        </developer>
+        
+        <developer>
+            <id>danielgwood</id>
+            <name>Daniel Wood</name>
+            <email>daniel.g.wood@gmail.com</email>
+        </developer>
+    </developers>
+    
+    <scm>
+        <connection>scm:git:git://github.com/robocup-atan/example-team.git</connection>
+        <developerConnection>scm:git:git@github.com:robocup-atan/example-team.git</developerConnection>
+        <url>http://github.com/robocup-atan/example-team</url>
+    </scm>
+  
+    <dependencies>
+        <dependency>
+            <groupId>com.github.robocup_atan.atan</groupId>
+            <artifactId>atan</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+            <exclusions>
+                <exclusion>
+                    <artifactId>javacc</artifactId>
+                    <groupId>net.java.dev.javacc</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        
+        <dependency>
+            <artifactId>log4j</artifactId>
+            <groupId>log4j</groupId>
+            <type>jar</type>
+            <version>1.2.16</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <type>jar</type>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>hamcrest-core</artifactId>
+                    <groupId>org.hamcrest</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    
+    <!--
+    AVOID RELEASE REPOSITORY/PLUGINREPOSITORY:
+    <repositories></repositories>
+    <pluginRepositories></pluginRepositories>
+    -->
+    
+</project>
