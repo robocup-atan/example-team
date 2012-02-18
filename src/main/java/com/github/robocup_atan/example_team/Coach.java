@@ -19,63 +19,51 @@ import org.apache.log4j.Logger;
 import java.util.HashMap;
 
 /**
+ * <p>Coach class.</p>
+ *
  * @author Atan
  */
 public class Coach implements ControllerCoach {
     private static Logger log = Logger.getLogger(Coach.class);
     private ActionsCoach  coach;
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearError(Errors error) {
         log.error(error);
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearOk(Ok ok) {
         log.info(ok);
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearPlayMode(PlayMode playMode) {
         log.info(playMode);
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearPlayer(double direction, String message) {
         log.info(message + "from " + direction);
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearReferee(RefereeMessage refereeMessage) {
         log.info(refereeMessage);
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearWarning(Warning warning) {
         log.warn(warning);
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoPlayerType(int id, double playerSpeedMax, double staminaIncMax, double playerDecay,
                                double inertiaMoment, double dashPowerRate, double playerSize, double kickableMargin,
@@ -83,9 +71,7 @@ public class Coach implements ControllerCoach {
         log.info("player type");
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoPlayerParam(double allowMultDefaultType, double dashPowerRateDeltaMax,
                                 double dashPowerRateDeltaMin, double effortMaxDeltaFactor, double effortMinDeltaFactor,
@@ -99,92 +85,70 @@ public class Coach implements ControllerCoach {
         log.info("player param");
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoCPTOther(int unum) {
         log.info("change player type other");
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoCPTOwn(int unum, int type) {
         log.info("change player type own");
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoServerParam(HashMap<ServerParams, Object> info) {
         log.info("server param");
         coach.teamGraphic(new XPMImageAtanLogo());
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeBall(double x, double y, double deltaX, double deltaY) {
         log.info("see ball");
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeePlayerOther(int number, boolean goalie, double x, double y, double deltaX, double deltaY,
                                    double bodyAngle, double neckAngle) {
         log.info("see player other");
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeePlayerOwn(int number, boolean goalie, double x, double y, double deltaX, double deltaY,
                                  double bodyAngle, double neckAngle) {
         log.info("see player own");
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void setCoach(ActionsCoach c) {
         coach = c;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public ActionsCoach getCoach() {
         return coach;
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeGoalOther(double x, double y) {
         log.info("see goal other");
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoSeeGoalOwn(double x, double y) {
         log.info("see goal own");
     }
 
-    /**
-     * @inheritDoc
-     */
+    /** {@inheritDoc} */
     @Override
     public void infoHearTeamNames(String teamWest, String teamEast) {
         log.info("Team names" + teamWest + " " + teamEast);
