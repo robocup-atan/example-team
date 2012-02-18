@@ -6,6 +6,7 @@ import com.github.robocup_atan.atan.model.XPMImage;
 
 /**
  * An XPM Image of the Atan logo.
+ *
  * @author Atan
  */
 public class XPMImageAtanLogo extends XPMImage {
